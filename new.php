@@ -1,17 +1,15 @@
 <?php
-require('ConnectDabase.php');
-if (isset($_POST['submit'])){
+require 'ConnectDabase.php';
+if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $age = $_POST['age'];
     $password = $_POST['password'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
-    
 
-
-    $SQL="INSERT INTO (name, age, password, email, mobile)
-    values ($name, $age, $password, $email, $mobile)";
-    $result=mysqli_query($connect,$sql);
+    $SQL="INSERT INTO crudoperation (name, age, password, email, mobile)
+    VALUES ('$name', '$age', '$password', '$email', '$mobile')";
+    $result = mysqli_query($connect,$sql);
     if ($result){
         echo "data inserted successfully!!";
     } else {
